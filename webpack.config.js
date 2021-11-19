@@ -1,6 +1,7 @@
 const path = require('path')
 
 module.exports = {
+  mode: "production",
   entry: './src/index.tsx',
   module: {
     rules: [
@@ -20,8 +21,13 @@ module.exports = {
     publicPath: 'dist/',
   },
   devServer: {
+    devMiddleware:{
     publicPath: '/dist/',
+  },
+
     hot: true,
     open: true,
+    
+    
   }
 }
