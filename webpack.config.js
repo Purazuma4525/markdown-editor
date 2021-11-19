@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.tsx',
   module: {
     rules: [
       {
@@ -12,14 +12,16 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js','.ts','.tsx'],
+    extensions: ['.js', '.ts', '.tsx'],
   },
-  // alias: {
-  //     "~": path.resolve(__dirname, "/src"),
-  // },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename:'index.js',
-    publicPath:'dist/',
+    filename: 'index.js',
+    publicPath: 'dist/',
+  },
+  devServer: {
+    publicPath: '/dist/',
+    hot: true,
+    open: true,
   }
 }
